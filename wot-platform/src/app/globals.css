@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #334155;
+}
+
+@theme inline {
+  /* Custom WOT Digital Solutions Colors */
+  --color-blue-700: #1E40AF;
+  --color-blue-800: #1E3A8A;
+  --color-blue-50: #EFF6FF;
+  --color-amber-500: #F59E0B;
+  --color-amber-600: #D97706;
+  --color-green-500: #10B981;
+
+  /* Typography */
+  --font-sans: var(--font-inter);
+
+  /* Base Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+}
