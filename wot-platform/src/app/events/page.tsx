@@ -3,7 +3,6 @@ import { Navigation } from '@/components/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { Calendar, Clock, MapPin, ExternalLink, CalendarDays } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   title: 'Events | WOT Digital Solutions',
@@ -129,21 +128,15 @@ export default async function EventsPage() {
 
                           {event.registration_url && (
                             <div className="pt-2">
-                              <Button
-                                variant="primary"
-                                size="sm"
-                                asChild
+                              <a
+                                href={event.registration_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm bg-blue-700 text-white hover:bg-blue-800 font-semibold rounded-lg transition-all shadow-md hover:shadow-lg"
                               >
-                                <a
-                                  href={event.registration_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2"
-                                >
-                                  Register Now
-                                  <ExternalLink size={16} />
-                                </a>
-                              </Button>
+                                Register Now
+                                <ExternalLink size={16} />
+                              </a>
                             </div>
                           )}
                         </CardContent>
@@ -163,9 +156,12 @@ export default async function EventsPage() {
                 <p className="text-gray-600 max-w-md mx-auto mb-8">
                   Check back soon for information about our upcoming services and special events.
                 </p>
-                <Button variant="primary" asChild>
-                  <a href="/contact">Contact Us</a>
-                </Button>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base bg-blue-700 text-white hover:bg-blue-800 font-semibold rounded-lg transition-all shadow-md hover:shadow-lg"
+                >
+                  Contact Us
+                </a>
               </div>
             )}
           </div>

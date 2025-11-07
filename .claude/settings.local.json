@@ -16,7 +16,17 @@
       "Bash(git push:*)",
       "Bash(git remote set-url:*)",
       "Bash(open \"https://vercel.com/signup\")",
-      "Bash(open \"https://vercel.com/dashboard\")"
+      "Bash(open \"https://vercel.com/dashboard\")",
+      "Bash(npx create-next-app@latest wot-platform --typescript --tailwind --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(node --version:*)",
+      "Bash(brew:*)",
+      "Bash(curl:*)",
+      "Bash(sudo -S bash /tmp/brew_install.sh)",
+      "Bash(sudo -S installer -pkg /tmp/node-installer.pkg -target /)",
+      "Bash(npm:*)",
+      "Bash(npx create-next-app@latest wot-platform --typescript --tailwind --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)"
     ],
     "deny": [],
     "ask": []
