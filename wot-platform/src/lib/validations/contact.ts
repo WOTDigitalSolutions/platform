@@ -14,7 +14,7 @@ export const prayerRequestSchema = z.object({
   email: z.string().email('Please enter a valid email address').optional().or(z.literal('')),
   phone: z.string().optional(),
   request: z.string().min(10, 'Prayer request must be at least 10 characters'),
-  is_anonymous: z.boolean().default(false),
+  is_anonymous: z.boolean(),
 })
 
 export type PrayerRequestData = z.infer<typeof prayerRequestSchema>
