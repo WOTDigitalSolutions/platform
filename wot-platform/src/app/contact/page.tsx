@@ -56,10 +56,10 @@ export default function ContactPage() {
                         <div>
                           <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                           <a
-                            href="mailto:info@example.com"
+                            href="mailto:wotdigitalsolutions@gmail.com"
                             className="text-blue-700 hover:text-blue-800 transition-colors"
                           >
-                            info@example.com
+                            wotdigitalsolutions@gmail.com
                           </a>
                         </div>
                       </div>
@@ -75,10 +75,10 @@ export default function ContactPage() {
                         <div>
                           <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                           <a
-                            href="tel:+2341234567890"
+                            href="tel:+256700123456"
                             className="text-blue-700 hover:text-blue-800 transition-colors"
                           >
-                            +234 123 456 7890
+                            +256 700 123 456
                           </a>
                         </div>
                       </div>
@@ -94,8 +94,9 @@ export default function ContactPage() {
                         <div>
                           <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
                           <p className="text-gray-600">
-                            123 Ministry Street<br />
-                            Lagos, Nigeria
+                            WOTMI Headquarter<br />
+                            WOT City Kakiri, Kikuji<br />
+                            Uganda
                           </p>
                         </div>
                       </div>
