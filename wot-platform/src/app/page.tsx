@@ -15,7 +15,17 @@ import {
   ArrowRight,
   Phone,
   Mail,
-  MessageCircle
+  MessageCircle,
+  Code,
+  Palette,
+  Globe,
+  Video,
+  Award,
+  Target,
+  Quote,
+  ExternalLink,
+  Clock,
+  Star
 } from "lucide-react"
 
 export default function Home() {
@@ -24,25 +34,475 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-blue-100">
-        <div className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Making Ministry Easy Through Smart Digital Systems
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Purpose-built websites and platforms that help ministers focus on what matters most: the ministry of the Word.
-          </p>
-          <p className="text-lg text-gray-500 mb-8">
-            From simple church websites to complete network management portals – we handle the tech so you can handle the harvest.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg">
-              See Plans & Pricing
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <div className="inline-block mb-4">
+                <span className="text-sm font-semibold text-blue-700 bg-blue-100 px-4 py-2 rounded-full">
+                  DIGITAL SOLUTIONS & MINISTRY TECHNOLOGY
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Making Ministry Easy Through Smart Digital Systems
+              </h1>
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                Purpose-built websites and platforms that help ministers focus on what matters most: the ministry of the Word.
+              </p>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                From simple church websites to complete network management portals – we handle the tech so you can handle the harvest.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-700 rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2" size={20} />
+                </a>
+                <a
+                  href="/about"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-blue-700 bg-white border-2 border-blue-700 rounded-lg hover:bg-blue-50 transition-all"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            {/* Right Image - Hexagonal Frame */}
+            <div className="relative hidden md:block">
+              <div className="relative">
+                {/* Hexagonal image container with CSS clip-path */}
+                <div
+                  className="relative w-full aspect-square max-w-2xl mx-auto"
+                  style={{
+                    clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                    background: 'white',
+                    padding: '8px'
+                  }}
+                >
+                  <div
+                    className="w-full h-full"
+                    style={{
+                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                      backgroundImage: 'url(https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop)',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                </div>
+
+                {/* Floating accent elements */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-200 rounded-full opacity-60 blur-2xl animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-300 rounded-full opacity-40 blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">OUR SERVICES</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              What We Do
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comprehensive digital solutions designed to amplify truth and multiply vision through technology
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="group text-center">
+              <div className="mb-6 mx-auto w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <Code className="text-blue-700" size={36} />
+              </div>
+              <h3 className="font-bold text-xl text-gray-900 mb-3">Web Development</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Custom websites and platforms built with modern technology for ministry excellence
+              </p>
+            </div>
+
+            <div className="group text-center">
+              <div className="mb-6 mx-auto w-20 h-20 bg-gradient-to-br from-amber-100 to-amber-50 rounded-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <Palette className="text-amber-600" size={36} />
+              </div>
+              <h3 className="font-bold text-xl text-gray-900 mb-3">Brand Design</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Visual identity and creative media that reflect the Spirit of your House
+              </p>
+            </div>
+
+            <div className="group text-center">
+              <div className="mb-6 mx-auto w-20 h-20 bg-gradient-to-br from-green-100 to-green-50 rounded-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <Video className="text-green-600" size={36} />
+              </div>
+              <h3 className="font-bold text-xl text-gray-900 mb-3">Digital Media</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sermon recording, editing, and distribution across multiple platforms
+              </p>
+            </div>
+
+            <div className="group text-center">
+              <div className="mb-6 mx-auto w-20 h-20 bg-gradient-to-br from-red-100 to-red-50 rounded-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <Globe className="text-red-600" size={36} />
+              </div>
+              <h3 className="font-bold text-xl text-gray-900 mb-3">Content Management</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Easy-to-use systems for managing sermons, events, and ministry content
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="group">
+              <div className="mb-4 mx-auto w-16 h-16 bg-blue-700 bg-opacity-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Award className="text-blue-200" size={32} />
+              </div>
+              <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">10+</div>
+              <div className="text-blue-200 font-medium">Years of Ministry</div>
+            </div>
+
+            <div className="group">
+              <div className="mb-4 mx-auto w-16 h-16 bg-amber-600 bg-opacity-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Target className="text-amber-200" size={32} />
+              </div>
+              <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">50+</div>
+              <div className="text-blue-200 font-medium">Projects Completed</div>
+            </div>
+
+            <div className="group">
+              <div className="mb-4 mx-auto w-16 h-16 bg-green-600 bg-opacity-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Users className="text-green-200" size={32} />
+              </div>
+              <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-green-200 to-white bg-clip-text text-transparent">100+</div>
+              <div className="text-blue-200 font-medium">Ministries Served</div>
+            </div>
+
+            <div className="group">
+              <div className="mb-4 mx-auto w-16 h-16 bg-purple-600 bg-opacity-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Globe className="text-purple-200" size={32} />
+              </div>
+              <div className="text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-purple-200 to-white bg-clip-text text-transparent">15+</div>
+              <div className="text-blue-200 font-medium">Nations Reached</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">CLIENT TESTIMONIALS</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hear from ministry leaders who have experienced transformation through our digital solutions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+              <div className="absolute top-6 right-6 text-blue-100">
+                <Quote size={48} />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  "WOT Digital Solutions transformed our ministry's online presence. The website is beautiful, functional, and perfectly captures our vision. Our members can now access sermons and events easily!"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    PS
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Pastor Sarah Johnson</h4>
+                    <p className="text-sm text-gray-600">New Life Chapel, Kenya</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+              <div className="absolute top-6 right-6 text-blue-100">
+                <Quote size={48} />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  "From the first call to launch, the team was professional and understanding of our ministry needs. They delivered a powerful platform in just 10 days. Highly recommended!"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    DR
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Dr. David Omondi</h4>
+                    <p className="text-sm text-gray-600">Faith Embassy, Uganda</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+              <div className="absolute top-6 right-6 text-blue-100">
+                <Quote size={48} />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  "The network portal has revolutionized how we manage our branches. Real-time reports, centralized content, and seamless communication. This is exactly what we needed!"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    AP
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Apostle Peter Mensah</h4>
+                    <p className="text-sm text-gray-600">Kingdom Network, Ghana</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">SUCCESS STORIES</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              See What We've Built
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real ministry websites and platforms we've delivered - from vision to launch in days
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Project 1 */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop"
+                  alt="Church Website"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Star className="text-amber-400 fill-amber-400" size={18} />
+                    <span className="text-sm font-medium">Featured Project</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Covenant Church Website</h3>
+                  <p className="text-blue-200 mb-4">5-page ministry site with sermon player, events calendar, and online giving integration</p>
+                  <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-1">
+                      <Clock size={16} />
+                      <span>Delivered in 8 days</span>
+                    </div>
+                    <div className="text-amber-400 font-semibold">$250</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
+                  alt="Ministry Portal"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Star className="text-amber-400 fill-amber-400" size={18} />
+                    <span className="text-sm font-medium">Featured Project</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Kingdom Network Portal</h3>
+                  <p className="text-blue-200 mb-4">Multi-branch management system with real-time reporting, resource library, and team dashboards</p>
+                  <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-1">
+                      <Clock size={16} />
+                      <span>Delivered in 12 days</span>
+                    </div>
+                    <div className="text-amber-400 font-semibold">$1,000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-700 rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl"
+            >
+              Start Your Project
               <ArrowRight className="ml-2" size={20} />
-            </Button>
-            <Button variant="outline" size="lg">
-              Watch Demo
-            </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Before/After Transformation Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">THE TRANSFORMATION</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              From Chaos to Clarity in Days
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              See how we transform scattered ministry operations into streamlined digital excellence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* BEFORE */}
+            <div className="bg-white rounded-2xl p-8 border-4 border-red-200 relative">
+              <div className="absolute -top-4 left-8 bg-red-500 text-white px-6 py-2 rounded-full font-bold text-sm">
+                BEFORE WOT
+              </div>
+              <div className="mt-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Ministry Struggles</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold text-sm mt-0.5">✕</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">No Online Presence</p>
+                      <p className="text-sm text-gray-600">Members can't find sermon recordings or event info</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold text-sm mt-0.5">✕</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Manual Everything</p>
+                      <p className="text-sm text-gray-600">Hours spent compiling reports from WhatsApp and Excel</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold text-sm mt-0.5">✕</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Scattered Tools</p>
+                      <p className="text-sm text-gray-600">Data lost across multiple platforms and devices</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold text-sm mt-0.5">✕</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">No Visibility</p>
+                      <p className="text-sm text-gray-600">Can't track growth, attendance, or ministry impact</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold text-sm mt-0.5">✕</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Expensive Quotes</p>
+                      <p className="text-sm text-gray-600">Agencies want $5,000+ and 3 months timeline</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* AFTER */}
+            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border-4 border-green-400 relative shadow-2xl">
+              <div className="absolute -top-4 left-8 bg-green-500 text-white px-6 py-2 rounded-full font-bold text-sm">
+                AFTER WOT ✨
+              </div>
+              <div className="mt-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Digital Excellence</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mt-0.5">✓</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Professional Website</p>
+                      <p className="text-sm text-gray-600">Beautiful, mobile-friendly site with sermons, events, giving</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mt-0.5">✓</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Automated Systems</p>
+                      <p className="text-sm text-gray-600">Reports auto-generated, data centralized, zero manual work</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mt-0.5">✓</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">One Platform</p>
+                      <p className="text-sm text-gray-600">Everything in one place - accessible from anywhere</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mt-0.5">✓</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Real-Time Insights</p>
+                      <p className="text-sm text-gray-600">See trends, track metrics, make data-driven decisions</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mt-0.5">✓</div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Affordable & Fast</p>
+                      <p className="text-sm text-gray-600">$200-$1,000 budget, delivered in 7-12 days</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-3 bg-white rounded-full px-8 py-4 shadow-lg">
+              <div className="text-4xl">🚀</div>
+              <div className="text-left">
+                <p className="text-sm text-gray-600">Average transformation time</p>
+                <p className="text-2xl font-bold text-blue-700">7-10 Days</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
