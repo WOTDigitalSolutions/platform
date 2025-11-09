@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/navigation"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -23,15 +24,16 @@ import {
   Award,
   Target,
   Quote,
-  ExternalLink,
   Clock,
-  Star
+  Star,
+  Shield
 } from "lucide-react"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <WhatsAppButton />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
@@ -97,6 +99,92 @@ export default function Home() {
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-200 rounded-full opacity-60 blur-2xl animate-pulse"></div>
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-300 rounded-full opacity-40 blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Introduction Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold text-blue-700 uppercase tracking-wider">MEET THE TEAM</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              A Message From Pastor Emma
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hear the heart and vision behind WOT Digital Solutions
+            </p>
+          </div>
+
+          <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+            {/* Video Container - 16:9 aspect ratio */}
+            <div className="relative aspect-video bg-gradient-to-br from-blue-900 to-blue-700">
+              {/* Placeholder - Replace with actual YouTube embed or video URL */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm border-2 border-white/40 hover:bg-white/30 transition-all cursor-pointer group">
+                  <Video className="text-white group-hover:scale-110 transition-transform" size={40} />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Welcome to WOT Digital Solutions</h3>
+                <p className="text-blue-100 text-center max-w-md mb-6">
+                  Pastor Emma shares the vision and mission behind building digital solutions that carry the Spirit of the House
+                </p>
+                <p className="text-sm text-blue-200 bg-blue-800/30 px-4 py-2 rounded-full">
+                  Video coming soon - Stay tuned!
+                </p>
+              </div>
+
+              {/* Uncomment when video is ready */}
+              {/*
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="WOT Digital Solutions Introduction"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              */}
+            </div>
+
+            {/* Video Stats/Info */}
+            <div className="grid grid-cols-3 divide-x divide-gray-200 bg-gray-50 p-6">
+              <div className="text-center px-4">
+                <div className="text-2xl font-bold text-blue-700 mb-1">15+</div>
+                <div className="text-sm text-gray-600">Years in Ministry</div>
+              </div>
+              <div className="text-center px-4">
+                <div className="text-2xl font-bold text-blue-700 mb-1">50+</div>
+                <div className="text-sm text-gray-600">Ministries Served</div>
+              </div>
+              <div className="text-center px-4">
+                <div className="text-2xl font-bold text-blue-700 mb-1">100%</div>
+                <div className="text-sm text-gray-600">Satisfaction Rate</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Optional: Key Points */}
+          <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
+            <div className="p-6">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="text-blue-700" size={24} />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Built by Ministers</h4>
+              <p className="text-sm text-gray-600">We understand ministry because we live it</p>
+            </div>
+            <div className="p-6">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="text-blue-700" size={24} />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Excellence Driven</h4>
+              <p className="text-sm text-gray-600">Every project reflects Kingdom quality</p>
+            </div>
+            <div className="p-6">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="text-blue-700" size={24} />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Global Impact</h4>
+              <p className="text-sm text-gray-600">Serving ministries across nations</p>
             </div>
           </div>
         </div>
@@ -919,6 +1007,113 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-6 md:px-12 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-center text-gray-600 mb-12">
+            Everything you need to know about our digital solutions
+          </p>
+
+          <div className="space-y-4">
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>How long does it take to build my website?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                Most websites are live in 7-10 days from kickoff. Simple sites can be done in 5 days, while custom projects may take 2-3 weeks. We'll give you an exact timeline after our discovery call.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>Do I need technical knowledge to manage my site?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                Not at all! We build user-friendly sites with easy-to-use dashboards. We also provide training and ongoing support. If you can use WhatsApp, you can manage your site.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>What if I don't have content ready (photos, text, etc.)?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                No problem! We can help create content, write copy, source stock images, or work with what you have. We'll guide you through exactly what we need.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>Can I update my website after it's launched?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                Absolutely! With our Website PRO plan, you get a content management system (CMS) to make updates yourself. Or choose our maintenance package and we'll handle updates for you.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>What's included in the monthly hosting fee?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                Your hosting includes: secure web hosting, SSL certificate (https://), email addresses, automatic backups, security updates, and 24/7 technical support. Everything to keep your site running smoothly.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>Do you work with ministries outside Uganda?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                Yes! We serve ministries worldwide. All communication and collaboration happens online via WhatsApp, email, and video calls. Payment can be made via bank transfer or mobile money.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>What payment methods do you accept?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                We accept bank transfers, mobile money (MTN & Airtel), and international payments via Wise or PayPal. Payment is split: 50% to start, 50% before launch.
+              </p>
+            </details>
+
+            <details className="group bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+              <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
+                <span>What happens if I'm not happy with the design?</span>
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600">
+                Your satisfaction is important to us! We include 2 rounds of revisions in every package. We'll work closely with you to ensure the final design matches your vision.
+              </p>
+            </details>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <a
+              href="https://wa.me/256701141534?text=I have a question about WOT Digital Solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-md transition-colors"
+            >
+              <MessageCircle className="mr-2" />
+              Chat With Us on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-20 bg-white" id="how-it-works">
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
@@ -1033,6 +1228,40 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 bg-gray-900 text-gray-300">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          {/* Trust Badges */}
+          <div className="mb-12 pb-8 border-b border-gray-800">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-3">
+                  <Shield className="text-white" size={24} />
+                </div>
+                <h4 className="font-semibold text-white text-sm mb-1">100% Secure</h4>
+                <p className="text-xs text-gray-400">SSL Encrypted</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-3">
+                  <Check className="text-white" size={24} />
+                </div>
+                <h4 className="font-semibold text-white text-sm mb-1">Money-Back Guarantee</h4>
+                <p className="text-xs text-gray-400">30 Days</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-3">
+                  <Users className="text-white" size={24} />
+                </div>
+                <h4 className="font-semibold text-white text-sm mb-1">50+ Ministries</h4>
+                <p className="text-xs text-gray-400">Served Worldwide</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mb-3">
+                  <Star className="text-white" size={24} />
+                </div>
+                <h4 className="font-semibold text-white text-sm mb-1">5-Star Reviews</h4>
+                <p className="text-xs text-gray-400">Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-white mb-4">Company</h3>
