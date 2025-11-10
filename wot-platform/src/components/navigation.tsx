@@ -89,7 +89,7 @@ export function Navigation() {
               <a
                 href="/contact"
                 className="text-gray-600 hover:text-blue-700 font-medium transition-colors py-2"
-                onClick(() => setMobileMenuOpen(false)}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </a>
