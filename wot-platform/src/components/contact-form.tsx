@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { contactFormSchema, type ContactFormData } from '@/lib/validations/contact'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { createClient } from '@/lib/supabase/client'
 import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
 
 export function ContactForm() {
@@ -27,18 +26,19 @@ export function ContactForm() {
     setErrorMessage('')
 
     try {
-      const supabase = createClient()
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([{
-          name: data.name,
-          email: data.email,
-          phone: data.phone || null,
-          message: data.message,
-          status: 'new',
-        }])
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
 
-      if (error) throw error
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
 
       setStatus('success')
       reset()
@@ -50,7 +50,7 @@ export function ContactForm() {
     } catch (error) {
       console.error('Error submitting contact form:', error)
       setStatus('error')
-      setErrorMessage('Failed to send your message. Please try again.')
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to send your message. Please try again.')
     }
   }
 
@@ -101,7 +101,7 @@ export function ContactForm() {
           id="phone"
           type="tel"
           {...register('phone')}
-          placeholder="+234 XXX XXX XXXX"
+          placeholder="+256 XXX XXX XXXX"
           disabled={status === 'loading'}
         />
       </div>
@@ -130,7 +130,10 @@ export function ContactForm() {
       {status === 'success' && (
         <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg flex items-center gap-3">
           <CheckCircle2 size={20} />
-          <p className="font-medium">Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+          <div>
+            <p className="font-medium">Thank you! Your message has been sent successfully.</p>
+            <p className="text-sm text-green-700 mt-1">We've sent a confirmation email to your inbox and will get back to you soon.</p>
+          </div>
         </div>
       )}
 
