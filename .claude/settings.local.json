@@ -43,7 +43,8 @@
       "Bash(for:*)",
       "Bash(do echo \"Check $i:\")",
       "Bash(done)",
-      "Bash(node run-migration.js:*)"
+      "Bash(node run-migration.js:*)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []
