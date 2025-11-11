@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { CTALink } from "@/components/cta-link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
@@ -56,19 +57,23 @@ export default function Home() {
                 From simple church websites to complete network management portals – we handle the tech so you can handle the harvest.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
+                <CTALink
                   href="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-700 rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl"
+                  variant="primary"
+                  eventProperties={{ location: 'hero', action: 'get_started' }}
                 >
                   Get Started
                   <ArrowRight className="ml-2" size={20} />
-                </a>
-                <a
+                </CTALink>
+                <CTALink
                   href="/about"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-blue-700 bg-white border-2 border-blue-700 rounded-lg hover:bg-blue-50 transition-all"
+                  variant="secondary"
+                  eventProperties={{ location: 'hero', action: 'learn_more' }}
                 >
                   Learn More
-                </a>
+                </CTALink>
               </div>
             </div>
 

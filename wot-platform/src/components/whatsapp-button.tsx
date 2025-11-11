@@ -2,6 +2,7 @@
 
 import { MessageCircle, X } from 'lucide-react'
 import { useState } from 'react'
+import { trackEvent } from '@/lib/analytics'
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -9,6 +10,11 @@ export function WhatsAppButton() {
   const defaultMessage = "Hello! I'm interested in learning more about WOT Digital Solutions for my ministry."
 
   const handleWhatsAppClick = () => {
+    // Track WhatsApp click
+    trackEvent('whatsapp_clicked', {
+      source: 'floating_button',
+    })
+
     const url = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(defaultMessage)}`
     window.open(url, '_blank')
   }

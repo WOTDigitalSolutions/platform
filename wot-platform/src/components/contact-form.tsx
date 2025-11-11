@@ -7,6 +7,7 @@ import { contactFormSchema, type ContactFormData } from '@/lib/validations/conta
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -39,6 +40,12 @@ export function ContactForm() {
       if (!response.ok) {
         throw new Error(result.error || 'Failed to send message')
       }
+
+      // Track successful form submission
+      trackEvent('contact_form_submitted', {
+        has_phone: !!data.phone,
+        message_length: data.message.length,
+      })
 
       setStatus('success')
       reset()
