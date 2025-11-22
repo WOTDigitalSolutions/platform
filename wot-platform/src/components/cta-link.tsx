@@ -1,6 +1,6 @@
 'use client'
 
-import { trackEvent } from '@/lib/analytics'
+import { trackEvent, type AnalyticsEvent } from '@/lib/analytics'
 import Link from 'next/link'
 
 interface CTALinkProps {
@@ -8,7 +8,7 @@ interface CTALinkProps {
   children: React.ReactNode
   className?: string
   variant?: 'primary' | 'secondary'
-  eventName?: string
+  eventName?: AnalyticsEvent
   eventProperties?: Record<string, string | number | boolean>
 }
 
