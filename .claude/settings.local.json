@@ -44,7 +44,8 @@
       "Bash(do echo \"Check $i:\")",
       "Bash(done)",
       "Bash(node run-migration.js:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []
