@@ -1,9 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "wot-platform/package.json",
-      "use": "@vercel/next"
-    }
-  ]
+  "buildCommand": "cd wot-platform && npm run build",
+  "outputDirectory": "wot-platform/.next",
+  "installCommand": "cd wot-platform && npm install"
 }
